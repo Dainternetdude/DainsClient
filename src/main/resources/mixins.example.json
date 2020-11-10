@@ -1,7 +1,7 @@
 {
     "required": true,
     "minVersion": "0.5.3",
-    "package": "com.dainsclient.mixin",
+    "package": "dainsclient.mixin",
     "refmap": "mixins.example.refmap.json",
     "mixins": [
         "MixinGuiMainMenu"
