@@ -1,4 +1,4 @@
-package com.dainsclient;
+package dainsclient;
 
 import static com.mumfrey.liteloader.gl.GL.*;
 import static net.minecraft.client.renderer.vertex.DefaultVertexFormats.*;

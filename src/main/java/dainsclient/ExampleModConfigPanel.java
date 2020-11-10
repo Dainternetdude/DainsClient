@@ -1,4 +1,4 @@
-package com.dainsclient;
+package dainsclient;
 
 import com.mumfrey.liteloader.Configurable;
 import com.mumfrey.liteloader.client.gui.GuiCheckbox;
@@ -35,7 +35,7 @@ public class ExampleModConfigPanel extends AbstractConfigPanel
     @Override
     protected void addOptions(ConfigPanelHost host)
     {
-        final LiteModDains mod = host.<LiteModDains>getMod();
+        final LiteModDainsClient mod = host.<LiteModDainsClient>getMod();
 
         this.addControl(new GuiCheckbox(4, 0, 0, I18n.format("dainsClient.config.itemRefreshCooldown")), new ConfigOptionListener<GuiCheckbox>()
         {

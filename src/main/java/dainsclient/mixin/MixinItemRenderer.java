@@ -1,4 +1,4 @@
-package com.dainsclient.mixin;
+package dainsclient.mixin;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.entity.EntityPlayerSP;

@@ -1,4 +1,4 @@
-package com.dainsclient;
+package dainsclient;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
@@ -22,7 +22,7 @@ import java.io.File;
  * @author Adam Mummery-Smith
  */
 @ExposableOptions(strategy = ConfigStrategy.Versioned, filename="dainsclient.json")
-public class LiteModDains implements Tickable, Configurable
+public class LiteModDainsClient implements Tickable, Configurable
 {
     /**
      * This is our instance of Clock which we will draw every tick
@@ -74,7 +74,7 @@ public class LiteModDains implements Tickable, Configurable
      * initialising any non-game-interfacing components or performing sanity
      * checking prior to initialisation
      */
-    public LiteModDains()
+    public LiteModDainsClient()
     {
     }
     
@@ -120,7 +120,7 @@ public class LiteModDains implements Tickable, Configurable
     {
         // The key binding declared above won't do anything unless we register
         // it, LiteLoader's Input manager provides a convenience method for this
-        LiteLoader.getInput().registerKeyBinding(LiteModDains.clockKeyBinding);
+        LiteLoader.getInput().registerKeyBinding(LiteModDainsClient.clockKeyBinding);
         
         this.clock.setSize(this.clockSize);
         this.clock.setVisible(this.clockVisible);
@@ -146,7 +146,7 @@ public class LiteModDains implements Tickable, Configurable
         // other elements
         if (inGame && minecraft.currentScreen == null && Minecraft.isGuiEnabled())
         {
-            if (LiteModDains.clockKeyBinding.isPressed())
+            if (LiteModDainsClient.clockKeyBinding.isPressed())
             {
                 if (Keyboard.isKeyDown(Keyboard.KEY_LSHIFT) || Keyboard.isKeyDown(Keyboard.KEY_RSHIFT))
                 {
