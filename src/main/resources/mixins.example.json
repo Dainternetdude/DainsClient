@@ -4,7 +4,8 @@
     "package": "dainsclient.mixin",
     "refmap": "mixins.example.refmap.json",
     "mixins": [
-        "MixinGuiMainMenu"
+        "MixinGuiMainMenu",
+        "MixinItemRenderer"
     ],
     "injectors": {
         "defaultRequire": 1
