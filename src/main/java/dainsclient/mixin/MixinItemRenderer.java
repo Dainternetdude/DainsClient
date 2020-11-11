@@ -12,8 +12,8 @@ import java.util.Objects;
 
 @Mixin(ItemRenderer.class)
 public abstract class MixinItemRenderer {
-    @Redirect(method = "updateEquippedItem",
-            at = @At(value = "INVOKE", target = "Lnet/minecraft/client/renderer/ItemRenderer;clamp(F)F", ordinal = 2))
+    @Redirect(method = "updateEquippedItem()V",
+            at = @At(value = "INVOKE", target = "Lnet/minecraft/util/MathHelper;clamp(III)I", ordinal = 2))
     private static int clamp(int num, int min, int max) {
         if(true)
         {
