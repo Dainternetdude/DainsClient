@@ -13,11 +13,11 @@ import java.util.Objects;
 @Mixin(ItemRenderer.class)
 public abstract class MixinItemRenderer {
     @Redirect(method = "updateEquippedItem()V",
-            at = @At(value = "INVOKE", target = "Lnet/minecraft/util/MathHelper;clamp(III)I", ordinal = 2))
-    private static int clamp(int num, int min, int max) {
+            at = @At(value = "INVOKE", target = "Lnet/minecraft/util/math/MathHelper;clamp(FFF)F", ordinal = 3))
+    private static float clamp(float num, float min, float max) {
         if(true)
         {
-            return 1;
+            return 100;
         }
         else
         {
