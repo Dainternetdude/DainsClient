@@ -16,7 +16,7 @@ buildscript {
         }
     }
     dependencies {
-        classpath 'net.minecraftforge.gradle:ForgeGradle:2.3-SNAPSHOT'
+        classpath 'net.minecraftforge.gradle:ForgeGradle:' + project.forgeGradleVersion
         classpath 'org.spongepowered:mixingradle:0.4-SNAPSHOT'
     }
 }
@@ -25,7 +25,6 @@ apply plugin: 'net.minecraftforge.gradle.liteloader'
 apply plugin: 'org.spongepowered.mixin'
 
 group = 'DainsClient'
-version = '1.0-SNAPSHOT'
 archivesBaseName = 'DainsClient'
 
 minecraft {
@@ -34,8 +33,24 @@ minecraft {
     runDir = "run"
 }
 
+sourceSets {
+    main {
+        // Refmap declaration must match the refmap name specified in the json config
+        ext.refMap = "mixins.sodium.refmap.json"
+    }
+}
+
 mixin {
     defaultObfuscationEnv notch
+}
+
+litemod {
+    json {
+        name = "dainsclient"
+        mcversion = project.targetVersion
+        description = ""
+        mixinConfigs += "mixins.dainsclient.json"
+    }
 }
 
 jar {
