@@ -36,7 +36,7 @@ minecraft {
 sourceSets {
     main {
         // Refmap declaration must match the refmap name specified in the json config
-        ext.refMap = "mixins.sodium.refmap.json"
+        ext.refMap = "mixins.dainsclient.refmap.json"
     }
 }
 
