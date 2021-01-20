@@ -1,5 +1,6 @@
 package dainsclient.mixin;
 
+import net.minecraft.client.entity.EntityPlayerSP;
 import net.minecraft.client.renderer.ItemRenderer;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -9,16 +10,9 @@ import org.spongepowered.asm.mixin.injection.Redirect;
 public abstract class MixinItemRenderer
 {
     @Redirect(method = "updateEquippedItem()V",
-            at = @At(value = "INVOKE", target = "Lnet/minecraft/util/math/MathHelper;clamp(FFF)F", ordinal = 3))
-    private float clamp(float num, float min, float max)
+            at = @At(value = "INVOKE", target = "Lnet/minecraft/client/entity/EntityPlayerSP;getCooledAttackStrength(F)F", ordinal = 0))
+    private float getCooledAttackStrength(EntityPlayerSP player, float adjustTicks)
     {
-        if(true)
-        {
-            return 100;
-        }
-        else
-        {
-            return 0;
-        }
+        return 1;
     }
 }
