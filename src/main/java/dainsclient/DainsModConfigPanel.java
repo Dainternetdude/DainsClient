@@ -14,7 +14,7 @@ import net.minecraft.client.resources.I18n;
  * 
  * @author Adam Mummery-Smith
  */
-public class ExampleModConfigPanel extends AbstractConfigPanel
+public class DainsModConfigPanel extends AbstractConfigPanel
 {
     // Preserve references to the text field handles so we can read the values
     private ConfigTextField txtString, txtNumeric;
@@ -25,7 +25,7 @@ public class ExampleModConfigPanel extends AbstractConfigPanel
     @Override
     public String getPanelTitle()
     {
-        return I18n.format("examplemod.config.title");
+        return I18n.format("dainsclient.config.title");
     }
     
     /* (non-Javadoc)
@@ -37,16 +37,16 @@ public class ExampleModConfigPanel extends AbstractConfigPanel
     {
         final LiteModDainsClient mod = host.<LiteModDainsClient>getMod();
 
-        this.addControl(new GuiCheckbox(4, 0, 0, I18n.format("dainsClient.config.itemRefreshCooldown")), new ConfigOptionListener<GuiCheckbox>()
+        this.addControl(new GuiCheckbox(0, 0, 0, I18n.format("dainsclient.config.itemRefreshCooldown")), new ConfigOptionListener<GuiCheckbox>()
         {
             @Override
             public void actionPerformed(GuiCheckbox control)
             {
-                mod.cycleItemRefreshCooldownOption();
+                DainsConfigs.setValueOfBooleanConfig("itemRefreshCooldown", !DainsConfigs.getValueOfBooleanConfig("itemRefreshCooldown"));
             }
-        }).checked = mod.itemRefreshCooldown;
+        }).checked = DainsConfigs.getValueOfBooleanConfig("itemRefreshCooldown");
 
-        this.addLabel(1, 0, 0, 200, 32, 0xFFFF55, I18n.format("examplemod.config.help.1"), I18n.format("examplemod.config.help.2"));
+        /*
         this.addControl(new GuiCheckbox(0, 0, 32, I18n.format("examplemod.config.option.enabled")), new ConfigOptionListener<GuiCheckbox>()
         {
             @Override
@@ -55,9 +55,10 @@ public class ExampleModConfigPanel extends AbstractConfigPanel
                 mod.setClockVisibility(control.checked = !control.checked);
             }
         }).checked = mod.getClockVisibility();
+         */
         
-        this.txtString = this.addTextField(2, 0, 50, 200, 20).setMaxLength(255);
-        this.txtNumeric = this.addTextField(3, 0, 75, 200, 20).setRegex("^[0-9]*$", false).setMaxLength(6);
+        //this.txtString = this.addTextField(2, 0, 50, 200, 20).setMaxLength(255);
+        //this.txtNumeric = this.addTextField(3, 0, 75, 200, 20).setRegex("^[0-9]*$", false).setMaxLength(6);
     }
 
     private void addControl(GuiCheckbox guiCheckbox) {
@@ -73,7 +74,8 @@ public class ExampleModConfigPanel extends AbstractConfigPanel
         
         // Code below shows how to read and handle the values out of the text
         // fields, what you do with the values is up to you.
-        
+
+        /*
         LiteLoaderLogger.info("Text field value was %s", this.txtString.getText());
         
         if (this.txtNumeric.isValid())
@@ -88,5 +90,6 @@ public class ExampleModConfigPanel extends AbstractConfigPanel
         {
             LiteLoaderLogger.info("Numeric field value was not valid!");
         }
+        */
     }
 }

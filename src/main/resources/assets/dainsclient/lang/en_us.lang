@@ -1,7 +1,9 @@
 
 key.clock.toggle=Toggle Clock
 
-dainsClient.config.itemRefreshCooldown=Item Refresh Cooldown
+dainsclient.config.itemRefreshCooldown=Item Refresh Cooldown
+dainsclient.config.title=Dain's Client Configuration
+
 
 examplemod.config.title=Example Mod Configuration
 examplemod.config.help.1=This is a simple option which demonstrates how to

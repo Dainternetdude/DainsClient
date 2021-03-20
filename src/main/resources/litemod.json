@@ -1,10 +1,10 @@
 {
     "name": "DainsClient",
-    "version": "0.0.1",
-    "author": "dain, DeadlyMC",
+    "version": "0.0.2",
+    "author": "Dainternetdude, DeadlyMC",
     "mcversion": "1.12.2",
     "mixinConfigs": [
         "mixins.dainsclient.json"
     ],
-    "description": "right now it just removes item refresh cooldown just to make it look like op 1.8\n\nbut no worries im adding the other features later this release is just to get something out there.\n\nyeah i know its hackey. dont @ me."
+    "description": "theres 1 option so far\n\nyeah i know its hacky. dont @ me."
 }
