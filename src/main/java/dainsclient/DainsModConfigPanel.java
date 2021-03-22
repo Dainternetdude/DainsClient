@@ -43,6 +43,7 @@ public class DainsModConfigPanel extends AbstractConfigPanel
             public void actionPerformed(GuiCheckbox control)
             {
                 DainsConfigs.setValueOfBooleanConfig("itemRefreshCooldown", !DainsConfigs.getValueOfBooleanConfig("itemRefreshCooldown"));
+                control.checked = !control.checked;
             }
         }).checked = DainsConfigs.getValueOfBooleanConfig("itemRefreshCooldown");
 
