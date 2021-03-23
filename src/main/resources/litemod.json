@@ -1,6 +1,6 @@
 {
     "name": "DainsClient",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "author": "Dainternetdude, DeadlyMC",
     "mcversion": "1.12.2",
     "mixinConfigs": [
