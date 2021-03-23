@@ -2,11 +2,9 @@ package dainsclient.mixin;
 
 import net.minecraft.client.entity.EntityPlayerSP;
 import net.minecraft.client.renderer.ItemRenderer;
-import net.minecraft.util.math.MathHelper;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;
-import dainsclient.LiteModDainsClient;
 import dainsclient.DainsConfigs;
 
 @Mixin(ItemRenderer.class)

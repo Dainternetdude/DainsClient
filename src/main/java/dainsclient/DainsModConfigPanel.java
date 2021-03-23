@@ -47,16 +47,15 @@ public class DainsModConfigPanel extends AbstractConfigPanel
             }
         }).checked = DainsConfigs.getValueOfBooleanConfig("itemRefreshCooldown");
 
-        /*
-        this.addControl(new GuiCheckbox(0, 0, 32, I18n.format("examplemod.config.option.enabled")), new ConfigOptionListener<GuiCheckbox>()
+        this.addControl(new GuiCheckbox(0, 0, 16, I18n.format("dainsclient.config.constantFOV")), new ConfigOptionListener<GuiCheckbox>()
         {
             @Override
             public void actionPerformed(GuiCheckbox control)
             {
-                mod.setClockVisibility(control.checked = !control.checked);
+                DainsConfigs.setValueOfBooleanConfig("constantFOV", !DainsConfigs.getValueOfBooleanConfig("constantFOV"));
+                control.checked = !control.checked;
             }
-        }).checked = mod.getClockVisibility();
-         */
+        }).checked = DainsConfigs.getValueOfBooleanConfig("constantFOV");
         
         //this.txtString = this.addTextField(2, 0, 50, 200, 20).setMaxLength(255);
         //this.txtNumeric = this.addTextField(3, 0, 75, 200, 20).setRegex("^[0-9]*$", false).setMaxLength(6);

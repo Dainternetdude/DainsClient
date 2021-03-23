@@ -3,6 +3,7 @@ package dainsclient;
 public class DainsConfigs {
 
     public static boolean itemRefreshCooldown = true;
+    public static boolean constantFOV = false;
 
     public static boolean getValueOfBooleanConfig(String configName) {
 
@@ -12,6 +13,8 @@ public class DainsConfigs {
 
             case "itemRefreshCooldown":
                 return itemRefreshCooldown;
+            case "constantFOV":
+                return constantFOV;
         }
         return false;
     }
@@ -23,6 +26,8 @@ public class DainsConfigs {
 
             case "itemRefreshCooldown":
                 itemRefreshCooldown = value;
+            case "constantFOV":
+                constantFOV = value;
         }
     }
 }

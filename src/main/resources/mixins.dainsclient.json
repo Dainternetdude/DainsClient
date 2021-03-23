@@ -5,7 +5,8 @@
     "refmap": "mixins.dainsclient.refmap.json",
     "mixins": [
         "MixinGuiMainMenu",
-        "MixinItemRenderer"
+        "MixinItemRenderer",
+        "MixinEntityRenderer"
     ],
     "injectors": {
         "defaultRequire": 1
