@@ -1,10 +1,10 @@
 {
     "name": "DainsClient",
-    "version": "0.0.3",
+    "version": "0.1.0",
     "author": "Dainternetdude, DeadlyMC",
     "mcversion": "1.12.2",
     "mixinConfigs": [
         "mixins.dainsclient.json"
     ],
-    "description": "theres 1 option so far\n\nyeah i know its hacky. dont @ me."
+    "description": "theres 2 options so far\n\nyeah i know its hacky. dont @ me."
 }

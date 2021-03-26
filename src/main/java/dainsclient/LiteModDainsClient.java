@@ -1,7 +1,5 @@
 package dainsclient;
 
-import com.google.gson.annotations.Expose;
-import com.google.gson.annotations.SerializedName;
 import com.mumfrey.liteloader.Configurable;
 import com.mumfrey.liteloader.Tickable;
 import com.mumfrey.liteloader.modconfig.ConfigPanel;
@@ -22,11 +20,6 @@ import java.io.File;
 public class LiteModDainsClient implements Tickable, Configurable
 {
     /**
-     * This is our instance of Clock which we will draw every tick
-     */
-    // private Clock clock = new Clock(10, 10);
-    
-    /**
      * This is a keybinding that we will register with the game and use to
      * toggle the clock
      * 
@@ -35,47 +28,13 @@ public class LiteModDainsClient implements Tickable, Configurable
      */
     // private static KeyBinding clockKeyBinding = new KeyBinding("key.clock.toggle", Keyboard.KEY_F12, "key.categories.litemods");
 
-
-    
-    @Expose
-    @SerializedName("clock_size")
-    private int clockSize = 64;
-    
-    @Expose
-    @SerializedName("clock_visible")
-    private boolean clockVisible = true;
-
-    /*
-    @Expose
-    @SerializedName("itemRefreshCooldown")
-    public boolean itemRefreshCooldown = true;
-
-    @Expose
-    @SerializedName("constantFOV")
-    public boolean constantFOV = false;
-
-    @Expose
-    @SerializedName("playerLegsCount")
-    public int playerLegsCount = 2;
-
-    @Expose
-    @SerializedName("longDoubleChests")
-    public boolean longDoubleChests = true;
-
-    @Expose
-    @SerializedName("cleanAnimations")
-    public boolean cleanAnimations = true;
-    */
-
     /**
      * Default constructor. All LiteMods must have a default constructor. In
      * general you should do very little in the mod constructor EXCEPT for
      * initialising any non-game-interfacing components or performing sanity
      * checking prior to initialisation
      */
-    public LiteModDainsClient()
-    {
-        DainsConfigs.setValueOfBooleanConfig("itemRefreshCooldown", true);
+    public LiteModDainsClient() {
     }
     
     /**
@@ -99,7 +58,7 @@ public class LiteModDainsClient implements Tickable, Configurable
     @Override
     public String getVersion()
     {
-        return "0.0.1";
+        return "0.1.0";
     }
     
     @Override
@@ -121,9 +80,6 @@ public class LiteModDainsClient implements Tickable, Configurable
         // The key binding declared above won't do anything unless we register
         // it, LiteLoader's Input manager provides a convenience method for this
         // LiteLoader.getInput().registerKeyBinding(LiteModDainsClient.clockKeyBinding);
-        
-        // this.clock.setSize(this.clockSize);
-        // this.clock.setVisible(this.clockVisible);
     }
     
     /**
@@ -141,49 +97,5 @@ public class LiteModDainsClient implements Tickable, Configurable
     @Override
     public void onTick(Minecraft minecraft, float partialTicks, boolean inGame, boolean clock)
     {
-        // The three checks here are critical to ensure that we only draw the
-        // clock as part of the "HUD" and don't draw it over active GUI's or
-        // other elements
-        if (inGame && minecraft.currentScreen == null && Minecraft.isGuiEnabled())
-        {
-            /*
-            if (LiteModDainsClient.clockKeyBinding.isPressed())
-            {
-                if (Keyboard.isKeyDown(Keyboard.KEY_LSHIFT) || Keyboard.isKeyDown(Keyboard.KEY_RSHIFT))
-                {
-                    this.clockSize = (this.clockSize << 1) & 0x1FF;
-                    this.clock.setSize(this.clockSize);
-                    this.clockSize = this.clock.getSize();
-                }
-                else
-                {
-                    this.clock.setVisible(!this.clock.isVisible());
-                    this.clockVisible = this.clock.isVisible();
-                }
-                
-                // Our @Expose annotations control what properties get saved,
-                // this tells liteloader to actually write properties to disk
-                LiteLoader.getInstance().writeConfig(this);
-            } */
-            
-            // Render the clock
-            // this.clock.render(minecraft);
-        }
     }
-
-    /*
-    void cycleItemRefreshCooldownOption() {
-        this.itemRefreshCooldown = !this.itemRefreshCooldown;
-    }
-
-    boolean getClockVisibility()
-    {
-        return this.clock.isVisible();
-    }
-    
-    void setClockVisibility(boolean visible)
-    {
-        this.clock.setVisible(this.clockVisible = visible);
-    }
-     */
 }

@@ -4,7 +4,6 @@ import com.mumfrey.liteloader.Configurable;
 import com.mumfrey.liteloader.client.gui.GuiCheckbox;
 import com.mumfrey.liteloader.modconfig.AbstractConfigPanel;
 import com.mumfrey.liteloader.modconfig.ConfigPanelHost;
-import com.mumfrey.liteloader.util.log.LiteLoaderLogger;
 import net.minecraft.client.resources.I18n;
 
 /**
@@ -17,7 +16,7 @@ import net.minecraft.client.resources.I18n;
 public class DainsModConfigPanel extends AbstractConfigPanel
 {
     // Preserve references to the text field handles so we can read the values
-    private ConfigTextField txtString, txtNumeric;
+    //private ConfigTextField txtString, txtNumeric;
     
     /* (non-Javadoc)
      * @see com.mumfrey.liteloader.modconfig.ConfigPanel#getPanelTitle()
@@ -42,20 +41,20 @@ public class DainsModConfigPanel extends AbstractConfigPanel
             @Override
             public void actionPerformed(GuiCheckbox control)
             {
-                DainsConfigs.setValueOfBooleanConfig("itemRefreshCooldown", !DainsConfigs.getValueOfBooleanConfig("itemRefreshCooldown"));
+                DainsConfigs.itemRefreshCooldown = !DainsConfigs.itemRefreshCooldown;
                 control.checked = !control.checked;
             }
-        }).checked = DainsConfigs.getValueOfBooleanConfig("itemRefreshCooldown");
+        }).checked = DainsConfigs.itemRefreshCooldown;
 
         this.addControl(new GuiCheckbox(0, 0, 16, I18n.format("dainsclient.config.constantFOV")), new ConfigOptionListener<GuiCheckbox>()
         {
             @Override
             public void actionPerformed(GuiCheckbox control)
             {
-                DainsConfigs.setValueOfBooleanConfig("constantFOV", !DainsConfigs.getValueOfBooleanConfig("constantFOV"));
+                DainsConfigs.constantFOV = !DainsConfigs.constantFOV;
                 control.checked = !control.checked;
             }
-        }).checked = DainsConfigs.getValueOfBooleanConfig("constantFOV");
+        }).checked = DainsConfigs.constantFOV;
         
         //this.txtString = this.addTextField(2, 0, 50, 200, 20).setMaxLength(255);
         //this.txtNumeric = this.addTextField(3, 0, 75, 200, 20).setRegex("^[0-9]*$", false).setMaxLength(6);

@@ -14,7 +14,7 @@ public abstract class MixinItemRenderer
             at = @At(value = "INVOKE", target = "Lnet/minecraft/client/entity/EntityPlayerSP;getCooledAttackStrength(F)F", ordinal = 0))
         private float getCooledAttackStrength(EntityPlayerSP player,float adjustTicks)
         {
-            if(DainsConfigs.getValueOfBooleanConfig("itemRefreshCooldown")) {
+            if(!DainsConfigs.itemRefreshCooldown) {
                 return 1;
             } else {
                 return player.getCooledAttackStrength(adjustTicks);

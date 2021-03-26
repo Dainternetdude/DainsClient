@@ -48,6 +48,6 @@ public abstract class MixinEntityRenderer implements IResourceManagerReloadListe
             at = @At(value = "STORE", ordinal = 2),
             name = "f")
     private float fmixin(float f) {
-        return DainsConfigs.getValueOfBooleanConfig("constantFOV") ? this.mc.gameSettings.fovSetting : f;
+        return DainsConfigs.constantFOV ? this.mc.gameSettings.fovSetting : f;
     }
 }
