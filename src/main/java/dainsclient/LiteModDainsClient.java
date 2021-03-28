@@ -90,12 +90,11 @@ public class LiteModDainsClient implements Tickable, Configurable
      *         java.io.File, java.io.File)
      */
     @Override
-    public void upgradeSettings(String version, File configPath, File oldConfigPath)
-    {
+    public void upgradeSettings(String version, File configPath, File oldConfigPath) {
     }
-    
+
     @Override
-    public void onTick(Minecraft minecraft, float partialTicks, boolean inGame, boolean clock)
-    {
+    public void onTick(Minecraft minecraft, float partialTicks, boolean inGame, boolean clock) {
+        // called each tica
     }
 }

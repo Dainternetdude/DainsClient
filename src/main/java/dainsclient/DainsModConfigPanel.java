@@ -5,6 +5,7 @@ import com.mumfrey.liteloader.client.gui.GuiCheckbox;
 import com.mumfrey.liteloader.modconfig.AbstractConfigPanel;
 import com.mumfrey.liteloader.modconfig.ConfigPanelHost;
 import net.minecraft.client.resources.I18n;
+import com.mumfrey.liteloader.modconfig.AbstractConfigPanel.ConfigOptionListener;
 
 /**
  * This is a simple example of adding a config panel to a mod. Your LiteMod

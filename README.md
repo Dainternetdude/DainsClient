@@ -7,6 +7,7 @@ I had to make it because too many people wanted me to port the more legs mod to 
 1.12.2 for all you hackers out there
 ## Options
 - Removed item refresh cooldown
+- Constant field of view
 ## Incompatibilities
 - Tweakaroo (might fix in the future, no plans rn)
 ## Contributing
