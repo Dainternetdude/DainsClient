@@ -56,7 +56,7 @@ public class LiteModDainsClient implements Tickable, Configurable
     @Override
     public String getVersion()
     {
-        return "0.1.1";
+        return "1.0.0"; // REMEMBER TO UPDATE the version in gradle.properties!!!!!!!!!!!!!!!!!!
     }
     
     @Override
