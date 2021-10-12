@@ -4,9 +4,10 @@
     "package": "dainsclient.mixin",
     "refmap": "mixins.dainsclient.refmap.json",
     "mixins": [
+        "MixinEntityRenderer",
         "MixinGuiMainMenu",
         "MixinItemRenderer",
-        "MixinEntityRenderer"
+        "MixinWorldProviderHell"
     ],
     "injectors": {
         "defaultRequire": 1

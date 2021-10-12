@@ -10,11 +10,9 @@ import net.minecraft.client.Minecraft;
 import java.io.File;
 
 /**
- * This is a very simple example LiteMod, it draws an analogue clock on the
- * minecraft HUD using a traditional onTick hook supplied by LiteLoader's
- * {@link Tickable} interface.
+ * Dainternetdude's custom client ported to Liteloader
  *
- * @author Adam Mummery-Smith
+ * @author Dainternetdude
  */
 @ExposableOptions(strategy = ConfigStrategy.Versioned, filename="dainsclient.json")
 public class LiteModDainsClient implements Tickable, Configurable
@@ -58,7 +56,7 @@ public class LiteModDainsClient implements Tickable, Configurable
     @Override
     public String getVersion()
     {
-        return "0.1.0";
+        return "0.1.1";
     }
     
     @Override
@@ -77,9 +75,8 @@ public class LiteModDainsClient implements Tickable, Configurable
     @Override
     public void init(File configPath)
     {
-        // The key binding declared above won't do anything unless we register
-        // it, LiteLoader's Input manager provides a convenience method for this
-        // LiteLoader.getInput().registerKeyBinding(LiteModDainsClient.clockKeyBinding);
+        DainsConfigs.load();
+        System.out.println("settings loaded");
     }
     
     /**
@@ -93,8 +90,10 @@ public class LiteModDainsClient implements Tickable, Configurable
     public void upgradeSettings(String version, File configPath, File oldConfigPath) {
     }
 
+    /**
+     * called each tick
+    */
     @Override
     public void onTick(Minecraft minecraft, float partialTicks, boolean inGame, boolean clock) {
-        // called each tica
     }
 }

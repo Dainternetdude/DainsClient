@@ -3,4 +3,5 @@ key.clock.toggle=Toggle Clock
 
 dainsclient.config.title=Dain's Client Configuration
 dainsclient.config.itemRefreshCooldown=Item Refresh Cooldown
-dainsclient.config.constantFOV= Constant FOV
+dainsclient.config.constantFOV=Constant FOV
+dainsclient.config.nearNetherFog=Near Nether Fog
